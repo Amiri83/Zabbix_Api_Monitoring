@@ -128,9 +128,9 @@ api-host auto.failed.rate 0.00
 api-host auto.tps.rate 14
 </pre>
 
-### Note: The API host should already be added to your Zabbix server
+### Note: The api-host should already be added to your Zabbix server
 
-2.Install Zabbix Sender (Trapper Support)
+2. **Install Zabbix Sender (Trapper Support):**
 Make sure zabbix_sender is installed on your system. This tool is required to send data to Zabbix trapper items
 for debian base
 <pre>
@@ -141,13 +141,12 @@ or
 sudo dnf install zabbix-sender 
 </pre>
 for Redhatbase
-
-3. add crontab for parse like below (I added for each 2 min you can define your own) 
+3. **add crontab for parse like below (I added for each 2 min you can define your own)**
 <pre>
 */2 * * * * root python3 /path/to/parser.py  > /tmp/zbx.txt && zabbix_sender -c /etc/zabbix/zabbix_agent2.conf -i /tmp/zbx.txt
 </pre>
 
-4.The parser provides 6 KPIs per API. You can add the desired items to your Zabbix configuration as needed.
+4. **The parser provides 6 KPIs per API. You can add the desired items to your Zabbix configuration as needed.**
 Here is a sample:
 first go to your api-host on zabbix and add item as below
 
