@@ -4,7 +4,7 @@ Monitor Specific API Call Success/Failure Rates and TPS from Nginx Logs Using Py
 
 ## Sample Dashboard
 
-![image](https://github.com/user-attachments/assets/b835908b-f430-491b-9597-74f69b33892f)
+![Dashboard_sample](docs/dashboard_sample)
 
 
 ## Background & Problem
@@ -110,7 +110,7 @@ for Redhatbase
 Here is a sample:
 first go to your api-host on zabbix and add item as below
 
-![image](https://github.com/user-attachments/assets/83a146d0-9165-42b2-8ffe-7991c1ad9414)
+![zabbix_item_config](docs/zabbix_item_config.png)
 
 Set the item type to Zabbix Trapper and use the exact key as shown in the parser.py output.
 The data type should be set to float.
