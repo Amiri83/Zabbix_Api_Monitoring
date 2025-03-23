@@ -4,7 +4,7 @@ Monitor Specific API Call Success/Failure Rates and TPS from Nginx Logs Using Py
 
 ## Sample Dashboard
 
-![Dashboard_sample](docs/dashboard_sample)
+![Dashboard_sample](docs/dashboard_sample.png)
 
 
 ## Background & Problem
