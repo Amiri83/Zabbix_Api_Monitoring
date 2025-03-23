@@ -1,4 +1,5 @@
-# Zabbix_Api_Monitoring
+<h1 align="center">Zabbix API Monitoring</h1>
+
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Python](https://img.shields.io/badge/python-3.6%2B-blue)
 ![Top Language](https://img.shields.io/github/languages/top/Amiri83/Zabbix_Api_Monitoring)
