@@ -59,19 +59,19 @@ We use a Python script to process log data, extract key metrics (success/failure
 Since some API calls occur during off-peak times when no requests may be made, this could negatively impact success rate calculations. To address this, the script reports a 100% success rate during off-peak periods to maintain consistent KPI monitoring, even when no API calls are made.
 
 
-
-
 ## ⚡ Quick Start
  
 1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Amiri83/Zabbix_Api_Monitoring.git
-   cd Zabbix_Api_Monitoring ```
+```bash
+ git clone https://github.com/Amiri83/Zabbix_Api_Monitoring.git
+ cd Zabbix_Api_Monitoring
+```
    
-### ⚙️ Configuration Python screipt 
+#### ⚙️ Configuration Python script 
 
 To start monitoring, the user must call the `process_logs()` function in `parser.py` with the appropriate parameters:
-### 🧩 Example:
+
+#### 🧩 Example:
 ```python
 process_logs(
     service_name="sms",
