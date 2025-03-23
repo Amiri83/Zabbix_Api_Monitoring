@@ -49,18 +49,38 @@ We use a Python script to process log data, extract key metrics (success/failure
 
 Since some API calls occur during off-peak times when no requests may be made, this could negatively impact success rate calculations. To address this, the script reports a 100% success rate during off-peak periods to maintain consistent KPI monitoring, even when no API calls are made.
 
-Configuration
-The user defines:
+### ⚙️ Configuration
 
-ServiceName: The name of the API being monitored.
-Zabbix Hostname: The target host in Zabbix to receive the metrics.
-Success/Total Conditions: Regular expressions used to identify successful and total API calls in the logs.
-The script calculates the log analysis window by subtracting one minute from the current system time (date -1 min) and applies the configured regex patterns to extract metrics from the logs.
+To start monitoring, the user must call the `process_logs()` function with the appropriate parameters:
+### 🧩 Example:
+```python
+process_logs(
+    service_name="sms",
+    log_file="/var/log/nginx/apipostdata.log",
+    success_pattern=r"SendSms 200",
+    total_pattern=r"SendSms",
+    offpeak_time='none'
+)
+```
 
-Total: Specifies the regex pattern used to count the total number of API calls.
-Success: Specifies the regex pattern used to count successful API calls.
-Off-peak period: Defines the time range during which the success rate is forcibly reported as 100%, even if the number of API calls is zero. If this value is set to null, the condition is ignored.
+- **ServiceName**  
+  The name of the API being monitored.  
+  This is specified at the **beginning of the script file**.
 
+- **Success/Total Conditions**  
+  Regular expressions used to identify **successful** and **total** API calls in the logs.  
+  The script analyzes logs from the **last 1 minute** (by subtracting one minute from the current system time) and applies the configured regex patterns to extract metrics.
+
+- **Log Location**  
+  The path to the **log file(s)** that the script should monitor.
+  
+- **offpeak_time**  
+  Time range during which the success rate is forced to 100%, even if there are zero API calls.
+  Set to 'none' to disable this feature.
+  
+- **Zabbix Hostname**
+  The target Zabbix server to receive metrics.
+  This variable must be set at the beginning of the script.
 
 
 ## Implemenation 
