@@ -10,7 +10,11 @@
   <img src="docs/banner.png" alt="Zabbix API Monitoring Banner" />
 </p>
 
-Monitor Specific API Call Success/Failure Rates and TPS from Nginx Logs Using Python, Zabbix, and Grafana
+<p align="center">
+  Monitor API success/failure rates and TPS from Nginx logs using Python, Zabbix, and Grafana.<br>
+  Get accurate, real-time insights with automated log parsing and dashboard visualization.
+</p>
+
 
 
 ## Sample Dashboard
