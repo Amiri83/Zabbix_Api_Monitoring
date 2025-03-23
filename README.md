@@ -51,7 +51,7 @@ Since some API calls occur during off-peak times when no requests may be made, t
 
 ### ⚙️ Configuration
 
-To start monitoring, the user must call the `process_logs()` function with the appropriate parameters:
+To start monitoring, the user must call the `process_logs()` function in parser.py with the appropriate parameters:
 ### 🧩 Example:
 ```python
 process_logs(
@@ -65,7 +65,6 @@ process_logs(
 
 - **ServiceName**  
   The name of the API being monitored.  
-  This is specified at the **beginning of the script file**.
 
 - **Success/Total Conditions**  
   Regular expressions used to identify **successful** and **total** API calls in the logs.  
