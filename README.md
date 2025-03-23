@@ -58,6 +58,13 @@ We use a Python script to process log data, extract key metrics (success/failure
 
 Since some API calls occur during off-peak times when no requests may be made, this could negatively impact success rate calculations. To address this, the script reports a 100% success rate during off-peak periods to maintain consistent KPI monitoring, even when no API calls are made.
 
+## ✅ Prerequisites
+Before using this script, ensure the following are in place:
+
+- **Zabbix Server** must be installed and running.
+- **Grafana** must be integrated with Zabbix for data visualization.
+- **Python 3** must be installed on the system where the script will run.
+  Recommended: Python 3.6 or higher.
 
 ## ⚡ Quick Start
  
@@ -140,8 +147,14 @@ or for Redhat base
 <pre>
 sudo dnf install zabbix-sender 
 </pre>
-
-
+or you can download related rpm from 
+<pre>
+https://repo.zabbix.com/zabbix/7.0/rhel/7/x86_64/
+</pre>
+or from here for other distors 
+<pre>
+https://repo.zabbix.com/zabbix/7.0/  
+</pre>
 3. **add crontab for parse like below (I added for each 2 min you can define your own)**
 <pre>
 */2 * * * * root python3 /path/to/parser.py  > /tmp/zbx.txt && zabbix_sender -c /etc/zabbix/zabbix_agent2.conf -i /tmp/zbx.txt
