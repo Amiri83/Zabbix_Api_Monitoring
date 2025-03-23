@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 # Set up the formatted date
 date_l = (datetime.now() - timedelta(minutes=1)).strftime('%d/%b/%Y:%H:%M')
 date_f = datetime.now().strftime('%Y%m%d')
-zabbix_hostname = "api-host"
+zabbix_hostname = "api-host" ##Change this to your zabbix Host 
 
 
 def process_logs(service_name, log_file, success_pattern, total_pattern=None, offpeak_time='none'):
