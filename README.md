@@ -1,4 +1,13 @@
 # Zabbix_Api_Monitoring
+
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Python](https://img.shields.io/badge/python-3.6%2B-blue)
+![Top Language](https://img.shields.io/github/languages/top/Amiri83/Zabbix_Api_Monitoring)
+![Last Commit](https://img.shields.io/github/last-commit/Amiri83/Zabbix_Api_Monitoring)
+![Issues](https://img.shields.io/github/issues/Amiri83/Zabbix_Api_Monitoring)
+
+
+
 Monitor Specific API Call Success/Failure Rates and TPS from Nginx Logs Using Python, Zabbix, and Grafana
 
 
