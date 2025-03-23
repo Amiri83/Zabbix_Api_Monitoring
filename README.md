@@ -6,7 +6,16 @@ Monitor Specific API Call Success/Failure Rates and TPS from Nginx Logs Using Py
 
 ![Dashboard_sample](docs/dashboard_sample.png)
 
+## 🚀 Features
 
+- **Real-time log parsing** from Nginx access logs.
+- Calculates **API success/failure rates** and **TPS (transactions per second)**.
+- Sends custom metrics to **Zabbix** using Zabbix sender.
+- Displays metrics with **Grafana dashboards** for easy visualization.
+- Supports **off-peak time handling** to maintain accurate KPIs.
+- Lightweight, easy to configure, and extendable.
+
+  
 ## Background & Problem
 Our system made high-frequency API calls to a third-party service via an Nginx reverse proxy. We were sending thousands of requests per second, but when the third-party service had issues, our calls would fail without warning.
 
@@ -49,9 +58,19 @@ We use a Python script to process log data, extract key metrics (success/failure
 
 Since some API calls occur during off-peak times when no requests may be made, this could negatively impact success rate calculations. To address this, the script reports a 100% success rate during off-peak periods to maintain consistent KPI monitoring, even when no API calls are made.
 
-### ⚙️ Configuration
 
-To start monitoring, the user must call the `process_logs()` function in parser.py with the appropriate parameters:
+
+
+## ⚡ Quick Start
+ 
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Amiri83/Zabbix_Api_Monitoring.git
+   cd Zabbix_Api_Monitoring ```
+   
+### ⚙️ Configuration Python screipt 
+
+To start monitoring, the user must call the `process_logs()` function in `parser.py` with the appropriate parameters:
 ### 🧩 Example:
 ```python
 process_logs(
@@ -80,12 +99,8 @@ process_logs(
 - **Zabbix Hostname**
   The target Zabbix server to receive metrics.
   This variable must be set at the beginning of the script.
-
-
-## Implemenation 
-1.Copy and configure the parser.py file on your server.
-
-When you run it, you should see output similar to the example below, depending on your defined patterns and the number of APIs being monitored.
+  
+After configuration when you run it, you should see output similar to the example below, depending on your defined patterns and the number of APIs being monitored.
 
 
 <pre>
