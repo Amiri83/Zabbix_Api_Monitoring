@@ -57,7 +57,10 @@ Total: Specifies the regex pattern used to count the total number of API calls.
 Success: Specifies the regex pattern used to count successful API calls.
 Off-peak period: Defines the time range during which the success rate is forcibly reported as 100%, even if the number of API calls is zero. If this value is set to null, the condition is ignored.
 
-![Log Flow](docs/log_flow.png)
+<p align="center">
+  <img src="docs/log_flow.png" alt="Log Flow Diagram" style="margin-top: 20px; margin-bottom: 20px; border-radius: 8px;"/>
+</p>
+
 
 
 ## Implemenation 
