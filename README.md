@@ -86,8 +86,12 @@ process_logs(
   The name of the API being monitored.  
 
 - **Success/Total Conditions**  
-  Regular expressions used to identify **successful** and **total** API calls in the logs.  
-  The script analyzes logs from the **last 1 minute** (by subtracting one minute from the current system time) and applies the configured regex patterns to extract metrics.
+  Regular expressions are used to identify **successful** and **total** API calls within the logs.  
+  The script analyzes logs from the **last 1 minute** by subtracting one minute from the current system time and applying the configured regex patterns to extract metrics.
+
+  Refer to `sample_logs.txt` for an example of the expected log format.  
+  ⚠️ It is important that your log format—especially the **timestamp format**—matches the sample.  
+  You can achieve this by configuring Nginx using the log format specified at the beginning of the documentation.
 
 - **Log Location**  
   The path to the **log file(s)** that the script should monitor.
