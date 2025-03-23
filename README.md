@@ -43,6 +43,10 @@ For accurate monitoring, all metrics — success, failure, and TPS — must be m
 ## Soultion 
 We use a Python script to process log data, extract key metrics (success/failure counts and TPS), and send them directly to Zabbix via trapper items. This ensures accurate, timestamp-aligned monitoring, independent of Zabbix’s polling schedule.
 
+<p align="center">
+  <img src="docs/log_flow.png" alt="Log Flow Diagram" style="margin-top: 20px; margin-bottom: 20px; border-radius: 8px;"/>
+</p>
+
 Since some API calls occur during off-peak times when no requests may be made, this could negatively impact success rate calculations. To address this, the script reports a 100% success rate during off-peak periods to maintain consistent KPI monitoring, even when no API calls are made.
 
 Configuration
@@ -56,10 +60,6 @@ The script calculates the log analysis window by subtracting one minute from the
 Total: Specifies the regex pattern used to count the total number of API calls.
 Success: Specifies the regex pattern used to count successful API calls.
 Off-peak period: Defines the time range during which the success rate is forcibly reported as 100%, even if the number of API calls is zero. If this value is set to null, the condition is ignored.
-
-<p align="center">
-  <img src="docs/log_flow.png" alt="Log Flow Diagram" style="margin-top: 20px; margin-bottom: 20px; border-radius: 8px;"/>
-</p>
 
 
 
